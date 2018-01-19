@@ -1,13 +1,4 @@
-const BROWSERS = [
-  'last 2 Chrome versions',
-  'last 2 ChromeAndroid versions',
-  'last 2 Firefox versions',
-  'last 2 Safari versions',
-  'last 2 ios versions',
-  'last 2 edge versions',
-  'last 2 ie versions',
-  'last 2 Opera versions'
-]
+const browsers = require('@pixel2html/browserlist')
 
 const plugins = [
   // class { handleClick = () => { } }
@@ -39,10 +30,10 @@ const plugins = [
   ]
 ]
 
-var env = process.env.BABEL_ENV || process.env.NODE_ENV
+const env = process.env.BABEL_ENV || process.env.NODE_ENV
 if (env !== 'development' && env !== 'test' && env !== 'production') {
   throw new Error(
-    'Using `babel-preset-react-app` requires that you specify `NODE_ENV` or ' +
+    'Using `@pixel2html/babel-preset` requires that you specify `NODE_ENV` or ' +
     '`BABEL_ENV` environment variables. Valid values are "development", ' +
     '"test", and "production". Instead, received: ' +
     JSON.stringify(env) +
@@ -96,7 +87,7 @@ if (env === 'test') {
           require.resolve('@babel/preset-env'),
           {
             targets: {
-              browsers: BROWSERS
+              browsers: browsers
             },
           // Disable polyfill transforms
             useBuiltIns: false,
