@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/babel-preset",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "babel recommendations by timmy burger",
   "main": "index.js",
   "repository": "Pixel2HTML/babel-preset",
