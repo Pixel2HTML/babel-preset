@@ -52,7 +52,7 @@ module.exports = function (api, opts) {
         // Latest stable ECMAScript features
         require('@babel/preset-env').default,
         {
-          useBuiltIns: true,
+          useBuiltIns: false,
           // Do not transform modules to CJS
           modules: false,
           targets: {
