@@ -7,6 +7,9 @@
   "bugs": {
     "url": "https://github.com/Pixel2HTML/babel-preset/issues"
   },
+  "scripts": {
+    "postversion": "git push; git push --tags; npm publish"
+  },
   "author": "Miguel Palau <mpalauzarza@gmail.com>",
   "license": "MIT",
   "files": [
