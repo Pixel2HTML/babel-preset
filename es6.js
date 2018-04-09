@@ -52,14 +52,16 @@ module.exports = function (api, opts) {
         // Latest stable ECMAScript features
         require('@babel/preset-env').default,
         {
-          // `entry` transforms `@babel/polyfill` into individual requires for
-          // the targeted browsers. This is safer than `usage` which performs
-          // static code analysis to determine what's required.
-          // This is probably a fine default to help trim down bundles when
-          // end-users inevitably import '@babel/polyfill'.
-          useBuiltIns: 'entry',
+          useBuiltIns: true,
           // Do not transform modules to CJS
           modules: false,
+          targets: {
+            browsers: [
+              // Browsers that have MODULES and everything in them :D
+              // https://philipwalton.com/articles/deploying-es2015-code-in-production-today/
+              'Chrome >= 60', 'Safari >= 10.1', 'iOS >= 10.3', 'Firefox >= 54', 'Edge >= 15',
+            ],
+          },
         },
       ],
       [
